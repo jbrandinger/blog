@@ -67,12 +67,30 @@ const Home = () => {
         <Typography variant="h4" component="h2" gutterBottom>
           Featured Posts
         </Typography>
-        <Grid container spacing={4}>
+        <Grid 
+          container 
+          spacing={4} 
+          sx={{ 
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
           {featuredPosts.map((post) => (
-            <Grid item key={post.id} xs={12} md={4}>
+            <Grid 
+              item 
+              key={post.id} 
+              xs={12} 
+              sm={6} 
+              md={4}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
               <Card
                 sx={{
-                  height: '100%',
+                  width: 360,
+                  height: 500,
                   display: 'flex',
                   flexDirection: 'column',
                   transition: 'transform 0.2s',
@@ -83,18 +101,54 @@ const Home = () => {
               >
                 <CardMedia
                   component="img"
-                  height="200"
+                  sx={{
+                    height: 240,
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
                   image={post.image}
                   alt={post.title}
                 />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="h3">
+                <CardContent sx={{ 
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 260,
+                  width: '100%',
+                }}>
+                  <Typography gutterBottom variant="h5" component="h3" sx={{ 
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    width: '100%',
+                  }}>
                     {post.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary" 
+                    paragraph
+                    sx={{
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      flexGrow: 1,
+                      width: '100%',
+                    }}
+                  >
                     {post.excerpt}
                   </Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Box sx={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    alignItems: 'center', 
+                    mt: 'auto',
+                    width: '100%',
+                  }}>
                     <Typography variant="caption" color="text.secondary">
                       {new Date(post.date).toLocaleDateString()}
                     </Typography>

@@ -1,8 +1,11 @@
 // Sample blog posts data
+import Intro from '../assets/images/intro.jpg';
+import Fork from '../assets/images/fork.jpeg';
+
 const blogPosts = [
   {
     id: 1,
-    title: 'Intro',
+    title: 'Greetings',
     slug: 'intro',
     excerpt: 'Welcome to my blog.',
     content: `Welcome to my blog. 
@@ -12,8 +15,7 @@ const blogPosts = [
   someone might find it interesting to read :)
 
   I don't know where this journey will take me, but I'm excited to find out. This space will evolve as I do.`,
-  
-    image: 'https://source.unsplash.com/random/800x600?writing',
+    image: Intro,
     date: '2025-05-18',
     author: 'Me',
     tags: ['Introduction', 'Journal'],
@@ -23,12 +25,12 @@ const blogPosts = [
     id: 2,
     title: 'The Fork in the Road',
     slug: 'the-fork-in-the-road',
-    excerpt: '.',
+    excerpt: 'My entire life has been a clear path. Until now..',
     content: `My entire life has been a clear path. Until now..
 
   ## The Fork
  I have reached the fork`,
-    image: 'https://source.unsplash.com/random/800x600?morning',
+    image: Fork,
     date: '2025-05-18',
     author: 'Me',
     tags: ['Contemplation', 'Journal'],
