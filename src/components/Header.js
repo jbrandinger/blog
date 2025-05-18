@@ -1,6 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo.png';
 
 const Header = () => {
   return (
@@ -15,20 +16,26 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <Typography 
-          variant="h6" 
-          component={Link} 
+        <Box
+          component={Link}
           to="/"
-          sx={{ 
-            flexGrow: 1,
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
             textDecoration: 'none',
-            color: 'primary.main',
-            fontWeight: 600,
-            letterSpacing: '-0.02em',
+            flexGrow: 1,
           }}
         >
-          My Journal
-        </Typography>
+          <Box
+            component="img"
+            src={logo}
+            alt="My Journal Logo"
+            sx={{
+              height: 50,
+              width: 'auto',
+            }}
+          />
+        </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Button 
             color="inherit" 

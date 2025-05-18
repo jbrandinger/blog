@@ -43,10 +43,10 @@ const Home = () => {
             align="center"
             gutterBottom
           >
-            Welcome to My Blog
+            Joel's Journal
           </Typography>
           <Typography variant="h5" align="center" paragraph>
-            Exploring technology, development, and everything in between
+            Exploring life, the universe, and everything in between
           </Typography>
           <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
             <Button
