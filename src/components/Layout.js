@@ -10,10 +10,18 @@ const Layout = ({ children }) => {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        backgroundColor: 'background.default',
       }}
     >
       <Header />
-      <Container component="main" sx={{ mt: 4, mb: 4, flex: 1 }}>
+      <Container 
+        component="main" 
+        sx={{ 
+          mt: 4, 
+          mb: 4, 
+          flex: 1,
+        }}
+      >
         {children}
       </Container>
       <Footer />
