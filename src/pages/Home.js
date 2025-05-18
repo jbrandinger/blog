@@ -89,7 +89,7 @@ const Home = () => {
             >
               <Card
                 sx={{
-                  width: 360,
+                  width: 380,
                   height: 500,
                   display: 'flex',
                   flexDirection: 'column',
@@ -115,6 +115,7 @@ const Home = () => {
                   flexDirection: 'column',
                   height: 260,
                   width: '100%',
+                  p: 1,
                 }}>
                   <Typography gutterBottom variant="h5" component="h3" sx={{ 
                     overflow: 'hidden',
