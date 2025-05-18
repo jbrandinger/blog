@@ -7,36 +7,23 @@ import {
   Card, 
   CardContent, 
   CardMedia, 
-  Button 
+  Button,
+  CircularProgress
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-
-// Temporary featured posts data (we'll move this to a separate file later)
-const featuredPosts = [
-  {
-    id: 1,
-    title: 'Getting Started with React',
-    excerpt: 'Learn the basics of React and start building modern web applications.',
-    image: 'https://source.unsplash.com/random/800x600?react',
-    date: '2024-03-20'
-  },
-  {
-    id: 2,
-    title: 'The Future of Web Development',
-    excerpt: 'Exploring upcoming trends and technologies in web development.',
-    image: 'https://source.unsplash.com/random/800x600?technology',
-    date: '2024-03-18'
-  },
-  {
-    id: 3,
-    title: 'Mastering CSS Grid',
-    excerpt: 'A comprehensive guide to CSS Grid layout system.',
-    image: 'https://source.unsplash.com/random/800x600?code',
-    date: '2024-03-15'
-  }
-];
+import { useBlog } from '../context/BlogContext';
 
 const Home = () => {
+  const { featuredPosts, loading } = useBlog();
+
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
   return (
     <Box>
       {/* Hero Section */}
@@ -107,9 +94,19 @@ const Home = () => {
                   <Typography variant="body2" color="text.secondary" paragraph>
                     {post.excerpt}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    {new Date(post.date).toLocaleDateString()}
-                  </Typography>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Typography variant="caption" color="text.secondary">
+                      {new Date(post.date).toLocaleDateString()}
+                    </Typography>
+                    <Button
+                      component={Link}
+                      to={`/blog/${post.slug}`}
+                      size="small"
+                      color="primary"
+                    >
+                      Read More
+                    </Button>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>

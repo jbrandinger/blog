@@ -6,7 +6,7 @@ A modern blogging platform built with React.
 
 ```
 src/
-  ├── components/     # Reusable UI components
+  ├── components/    # Reusable UI components
   ├── pages/         # Page components
   ├── assets/        # Images, fonts, and other static files
   ├── styles/        # Global styles and CSS modules
